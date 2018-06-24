@@ -1,6 +1,9 @@
-<h1>Editing Todo List</h1>
+<h1 class="todo_list_titulo">Editar la Lista de Tareas</h1>
 
-<%= render 'form', todo_list: @todo_list %>
+<div class="forms">
+  <%= render 'form', todo_list: @todo_list %>
+</div>
 
-<%= link_to 'Nuevo Item', @todo_list %> |
-<%= link_to 'Regresar', todo_lists_path %>
+<div class="links">
+  <%= link_to 'Cancelar', todo_lists_path %>
+</div>

@@ -1,5 +1,9 @@
-<h1>New Todo List</h1>
+<h1 class="todo_list_titulo">Nueva Lista de Tareas</h1>
 
-<%= render 'form', todo_list: @todo_list %>
+<div class="forms">
+  <%= render 'form', todo_list: @todo_list %>
+</div>
 
-<%= link_to 'Regresar', todo_lists_path %>
+<div class="links">
+  <%= link_to 'Regresar', todo_lists_path %>
+</div>

@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @todo_list.titulo %>
-</p>
+<h2 class="todo_list_titulo"><%= @todo_list.titulo %></h2>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @todo_list.descripcion %>
-</p>
+<p class="todo_list_sub_titulo"><%= @todo_list.descripcion %></p>
 
 <div id="todo_items_wrapper">
   <%= render @todo_list.todo_items %>
@@ -17,5 +11,8 @@
   </div>
 </div>
 
-<%= link_to 'Editar', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Regresar', todo_lists_path %>
+<div class="links">
+  <%= link_to 'Editar', edit_todo_list_path(@todo_list) %> |
+  <%= link_to 'Borrar', todo_list_path(@todo_list), method: :delete, data: { confirm: "Estás seguro?" } %> |
+  <%= link_to 'Regresar', todo_lists_path %>
+</div>
