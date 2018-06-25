@@ -1,5 +1,5 @@
 class TodoListsController < ApplicationController
-  before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_todo_list, only: %i[show edit update destroy]
 
   # GET /todo_lists
   # GET /todo_lists.json
@@ -9,8 +9,7 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
-  def show
-  end
+  def show; end
 
   # GET /todo_lists/new
   def new
@@ -18,8 +17,7 @@ class TodoListsController < ApplicationController
   end
 
   # GET /todo_lists/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /todo_lists
   # POST /todo_lists.json
@@ -62,13 +60,14 @@ class TodoListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_todo_list
-      @todo_list = TodoList.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def todo_list_params
-      params.require(:todo_list).permit(:titulo, :descripcion)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_todo_list
+    @todo_list = TodoList.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def todo_list_params
+    params.require(:todo_list).permit(:titulo, :descripcion)
+  end
 end
