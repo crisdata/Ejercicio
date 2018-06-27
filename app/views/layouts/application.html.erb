@@ -12,7 +12,19 @@
 
   <body>
 
+    <ul class="nav justify-content-end">
+      <%- if user_signed_in? %>
+          <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
+      <% else %>
+          <%= link_to 'Iniciar Sesion', new_user_session_path %>
+          <%= link_to ' Registrarme', new_user_registration_path %>
+      <% end %>
+    </ul>
+
     <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
       <%= yield %>
     </div>
 

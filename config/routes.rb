@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :todo_lists do
     resources :todo_items do # no entiendo muy bien esta parte.
       member do
