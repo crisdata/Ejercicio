@@ -21,13 +21,17 @@
       <% end %>
     </ul>
 
+    <%= link_to_unless_current "English", locale: "en" %> |
 
     <div class="container">
+      <%= link_to_unless_current "Español", locale: "es" %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
       <%= yield %>
     </div>
+
+
 
   </body>
 </html>

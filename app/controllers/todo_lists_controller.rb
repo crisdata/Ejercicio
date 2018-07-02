@@ -1,6 +1,6 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: %i[show edit update destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user! # Me ayuda a que la pagina cargue desde el Inicio de Sesion
   # GET /todo_lists
   # GET /todo_lists.json
   def index
