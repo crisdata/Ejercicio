@@ -12,7 +12,7 @@
 
   <body>
 
-    <ul class="nav justify-content-end">
+    <ul class="links">
       <%- if user_signed_in? %>
           <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
       <% else %>
@@ -21,10 +21,14 @@
       <% end %>
     </ul>
 
-    <%= link_to_unless_current "English", locale: "en" %> |
+
 
     <div class="container">
-      <%= link_to_unless_current "Español", locale: "es" %>
+      <div class="links">
+        <%= link_to_unless_current "English", locale: "en" %> |
+        <%= link_to_unless_current "Español", locale: "es" %>
+      </div>
+      
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
